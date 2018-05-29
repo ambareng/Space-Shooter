@@ -2,11 +2,9 @@
 
 public class BulletController : MonoBehaviour {
 	public float bulletSpeed;
-	private Renderer compRenderer;
 
 	void Awake () {
 		bulletSpeed = 20f;
-		compRenderer = this.gameObject.GetComponent<Renderer> ();
 	}
 
 	void Update () {
@@ -14,6 +12,7 @@ public class BulletController : MonoBehaviour {
 	}
 
 	void OnTriggerExit2D (Collider2D other) {
-		Destroy (this.gameObject);
+		if (other.tag == "Border")
+			Destroy (this.gameObject);
 	}
 }
