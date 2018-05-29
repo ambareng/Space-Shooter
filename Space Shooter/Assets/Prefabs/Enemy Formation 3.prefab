@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 114357853035221510}
   m_Layer: 0
   m_Name: Enemy 1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -206,6 +206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpeed: 0
+  formationController: {fileID: 0}
 --- !u!114 &114370937016980964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -217,7 +218,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d3dca8de1a05b04dae43307cb8a27cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  formationSpeed: 5
+  formationSpeed: 2
 --- !u!212 &212760870189571374
 SpriteRenderer:
   m_ObjectHideFlags: 1

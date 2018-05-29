@@ -3,10 +3,10 @@
 public class EnemyController : MonoBehaviour {
 	public float enemySpeed;
 	
-	FormationController formationController;
+	public FormationController formationController;
 
 	void Awake () {
-		formationController = GetComponent<FormationController> ();
+		formationController = FindObjectOfType<FormationController> ();
 		enemySpeed = formationController.formationSpeed;
 	}
 
