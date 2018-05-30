@@ -2,12 +2,10 @@
 
 public class BulletController : MonoBehaviour {
 	public float bulletSpeed;
-	ScoreManager scoreManager;
 	PauseManager pauseManager;
 
 	void Awake () {
 		bulletSpeed = 20f;
-		scoreManager = FindObjectOfType<ScoreManager> ();
 		pauseManager = FindObjectOfType<PauseManager> ();
 	}
 
@@ -20,11 +18,5 @@ public class BulletController : MonoBehaviour {
 	void OnTriggerExit2D (Collider2D other) {
 		if (other.tag == "Border")
 			Destroy (this.gameObject);
-	}
-
-	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag == "Enemy") {
-			scoreManager.score += 1;
-		}
 	}
 }

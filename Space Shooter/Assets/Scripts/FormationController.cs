@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 public class FormationController : MonoBehaviour {
-	public float formationSpeed;
+	public int formationSpeed;
 	PauseManager pauseManager;
 
 	void Awake () {

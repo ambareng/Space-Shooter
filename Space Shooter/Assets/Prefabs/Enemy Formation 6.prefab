@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 50298560708369172}
   - component: {fileID: 61758945252443076}
   - component: {fileID: 114734004670899044}
+  - component: {fileID: 114837984339652134}
   m_Layer: 0
   m_Name: Enemy 2
   m_TagString: Enemy
@@ -40,6 +41,7 @@ GameObject:
   - component: {fileID: 50647720329540234}
   - component: {fileID: 61526905874141920}
   - component: {fileID: 114742873057177674}
+  - component: {fileID: 114459016005457002}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Enemy
@@ -124,6 +126,7 @@ GameObject:
   - component: {fileID: 50691928295292736}
   - component: {fileID: 61316717772366250}
   - component: {fileID: 114805405560449782}
+  - component: {fileID: 114691858014021510}
   m_Layer: 0
   m_Name: Enemy 3
   m_TagString: Enemy
@@ -420,6 +423,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   formationSpeed: 2
+--- !u!114 &114459016005457002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1381060309277416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259178d07fc6e204d9b71052dc5a49b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 1
+--- !u!114 &114691858014021510
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1815652630139944}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259178d07fc6e204d9b71052dc5a49b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 1
 --- !u!114 &114734004670899044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -431,8 +458,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca6ccb55b3e0dd44affac5924ed9cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 0
-  formationController: {fileID: 0}
 --- !u!114 &114742873057177674
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -444,8 +469,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca6ccb55b3e0dd44affac5924ed9cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 0
-  formationController: {fileID: 0}
 --- !u!114 &114805405560449782
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -457,8 +480,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca6ccb55b3e0dd44affac5924ed9cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 0
-  formationController: {fileID: 0}
+--- !u!114 &114837984339652134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1326206108024354}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 259178d07fc6e204d9b71052dc5a49b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealth: 1
 --- !u!212 &212048901363051376
 SpriteRenderer:
   m_ObjectHideFlags: 1
