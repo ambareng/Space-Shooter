@@ -422,6 +422,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca6ccb55b3e0dd44affac5924ed9cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1072212317662092, guid: 9b65f5246dc7a274e8cee6142b347f54, type: 2}
+  enemyBullet: {fileID: 1796816062537544, guid: 7b4e8dab84575a642bc52ea32b2b55c3,
+    type: 2}
+  moveDir: {x: 0, y: 0, z: 0}
 --- !u!114 &114102378770060842
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -445,6 +449,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca6ccb55b3e0dd44affac5924ed9cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1072212317662092, guid: 9b65f5246dc7a274e8cee6142b347f54, type: 2}
+  enemyBullet: {fileID: 1796816062537544, guid: 7b4e8dab84575a642bc52ea32b2b55c3,
+    type: 2}
+  moveDir: {x: 0, y: 0, z: 0}
 --- !u!114 &114280370576788346
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -480,6 +488,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca6ccb55b3e0dd44affac5924ed9cfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1072212317662092, guid: 9b65f5246dc7a274e8cee6142b347f54, type: 2}
+  enemyBullet: {fileID: 1796816062537544, guid: 7b4e8dab84575a642bc52ea32b2b55c3,
+    type: 2}
+  moveDir: {x: 0, y: 0, z: 0}
 --- !u!114 &114825931977995470
 MonoBehaviour:
   m_ObjectHideFlags: 1

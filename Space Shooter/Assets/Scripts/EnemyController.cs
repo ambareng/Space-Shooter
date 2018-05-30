@@ -1,8 +1,11 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class EnemyController : MonoBehaviour {
+	public GameObject enemyBullet;
 	int enemySpeed;
-	int difficulty;
+	public int difficulty;
+	float shootCooldown;
 	FormationController formationController;
 	PauseManager pauseManager;
 	ScoreManager scoreManager;
@@ -24,11 +27,21 @@ public class EnemyController : MonoBehaviour {
 			enemyHealthManager.enemyHealth = 3;
 		}
 		pauseManager = FindObjectOfType<PauseManager> ();
+		shootCooldown = 0f;
 	}
 
 	void Update () {
 		if (pauseManager.isPlaying) {
 			transform.Translate (0f, -enemySpeed * Time.deltaTime, 0f);
+
+			if (scoreManager.score >= 20) {
+				shootCooldown -= Time.deltaTime;
+
+				if (shootCooldown <= 0) {
+					StartCoroutine ("Shoot");
+					shootCooldown = 2f;
+				}
+			}
 		}
 	}
 
@@ -47,5 +60,15 @@ public class EnemyController : MonoBehaviour {
 				Destroy (gameObject);
 			}
 		}
+	}
+
+	IEnumerator Shoot () {
+		int willShoot = Random.Range (0, 2);
+		if (willShoot == 1) {
+			GameObject enemyBulletObj = Instantiate (enemyBullet, transform.position, Quaternion.identity);
+			enemyBulletObj.transform.position = transform.position;
+		}
+
+		yield return new WaitForSeconds (0.0000001f);
 	}
 }
