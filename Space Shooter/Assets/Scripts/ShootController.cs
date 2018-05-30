@@ -5,14 +5,21 @@ public class ShootController : MonoBehaviour {
 	public float shootCooldown;
 	public GameObject bullet;
 	Vector3 shootPos;
+	PauseManager pauseManager;
+
+	void Awake () {
+		pauseManager = FindObjectOfType<PauseManager> ();
+	}
 
 	void Update () {
-		shootCooldown -= Time.deltaTime;
-		shootPos = transform.position;
+		if (pauseManager.isPlaying) {
+			shootCooldown -= Time.deltaTime;
+			shootPos = transform.position;
 
-		if (shootCooldown <= 0) {
-			StartCoroutine ("Shoot");
-			shootCooldown = 0.25f;
+			if (shootCooldown <= 0) {
+				StartCoroutine ("Shoot");
+				shootCooldown = 0.25f;
+			}
 		}
 	}
 

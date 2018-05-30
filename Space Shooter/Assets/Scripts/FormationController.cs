@@ -2,9 +2,16 @@
 
 public class FormationController : MonoBehaviour {
 	public float formationSpeed;
+	PauseManager pauseManager;
+
+	void Awake () {
+		pauseManager = FindObjectOfType<PauseManager> ();
+	}
 
 	void Update () {
-		transform.Translate (0f, -formationSpeed * Time.deltaTime, 0f);
+		if (pauseManager.isPlaying) {
+			transform.Translate (0f, -formationSpeed * Time.deltaTime, 0f);
+		}
 	}
 
 	void OnTriggerExit2D (Collider2D other) {

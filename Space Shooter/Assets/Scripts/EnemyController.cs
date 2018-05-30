@@ -2,16 +2,19 @@
 
 public class EnemyController : MonoBehaviour {
 	public float enemySpeed;
-	
-	public FormationController formationController;
+	FormationController formationController;
+	PauseManager pauseManager;
 
 	void Awake () {
 		formationController = FindObjectOfType<FormationController> ();
 		enemySpeed = formationController.formationSpeed;
+		pauseManager = FindObjectOfType<PauseManager> ();
 	}
 
 	void Update () {
-		transform.Translate (0f, -enemySpeed * Time.deltaTime, 0f);
+		if (pauseManager.isPlaying) {
+			transform.Translate (0f, -enemySpeed * Time.deltaTime, 0f);
+		}
 	}
 
 	void OnTriggerExit2D (Collider2D other) {

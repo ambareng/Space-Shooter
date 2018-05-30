@@ -5,17 +5,21 @@ public class SpawnerController : MonoBehaviour {
 	public float spawnCooldown;
 	public GameObject[] enemy;
 	Vector3 spawnPos;
+	PauseManager pauseManager;
 
 	void Awake () {
 		spawnPos = transform.position;
+		pauseManager = FindObjectOfType<PauseManager> ();
 	}
 
 	void Update () {
-		spawnCooldown -= Time.deltaTime;
+		if (pauseManager.isPlaying) {
+			spawnCooldown -= Time.deltaTime;
 
-		if (spawnCooldown <= 0) {
-			StartCoroutine ("Spawn");
-			spawnCooldown = 2f;
+			if (spawnCooldown <= 0) {
+				StartCoroutine ("Spawn");
+				spawnCooldown = 2f;
+			}
 		}
 	}
 

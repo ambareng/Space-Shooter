@@ -2,15 +2,19 @@
 
 public class BulletController : MonoBehaviour {
 	public float bulletSpeed;
-	public ScoreManager scoreManager;
+	ScoreManager scoreManager;
+	PauseManager pauseManager;
 
 	void Awake () {
 		bulletSpeed = 20f;
 		scoreManager = FindObjectOfType<ScoreManager> ();
+		pauseManager = FindObjectOfType<PauseManager> ();
 	}
 
 	void Update () {
-		transform.Translate (0f, bulletSpeed * Time.deltaTime, 0f);
+		if (pauseManager.isPlaying == true) {
+			transform.Translate (0f, bulletSpeed * Time.deltaTime, 0f);
+		}
 	}
 
 	void OnTriggerExit2D (Collider2D other) {
