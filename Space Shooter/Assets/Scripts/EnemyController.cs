@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class EnemyController : MonoBehaviour {
 	public GameObject enemyBullet;
@@ -10,8 +11,12 @@ public class EnemyController : MonoBehaviour {
 	PauseManager pauseManager;
 	ScoreManager scoreManager;
 	EnemyHealthManager enemyHealthManager;
+	public bool isInvincible;
+	public bool canShoot;
 
 	void Awake () {
+		isInvincible = true;
+		canShoot = true;
 		scoreManager = FindObjectOfType<ScoreManager> ();
 		formationController = FindObjectOfType<FormationController> ();
 		enemyHealthManager = GetComponent<EnemyHealthManager> ();
@@ -37,7 +42,7 @@ public class EnemyController : MonoBehaviour {
 			if (scoreManager.score >= 20) {
 				shootCooldown -= Time.deltaTime;
 
-				if (shootCooldown <= 0) {
+				if (shootCooldown <= 0 && canShoot) {
 					StartCoroutine ("Shoot");
 					shootCooldown = 2f;
 				}
@@ -52,13 +57,23 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D (Collider2D other) {
-		if (other.tag == "Bullet" || other.tag == "Player") {
-			enemyHealthManager.Damage (1);
+		if (other.tag == "Bullet") {
+			if (!isInvincible) {
+				enemyHealthManager.Damage (1);
+			}
 			Destroy (other.gameObject);
 			if (enemyHealthManager.enemyHealth <= 0) {
 				scoreManager.score += 1;
 				Destroy (gameObject);
 			}
+		} else if (other.tag == "Player") {
+			Destroy (other.gameObject);
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
+			Destroy (gameObject);
+		} else if (other.tag == "Invincibility Line") {
+			isInvincible = false;
+		} else if (other.tag == "No Shoot Line") {
+			canShoot = false;
 		}
 	}
 

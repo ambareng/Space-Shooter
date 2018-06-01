@@ -18,4 +18,8 @@ public class FormationController : MonoBehaviour {
 		if (other.tag == "Border")
 			Destroy (gameObject);
 	}
+
+	void OnBecameInvisible () {
+		Destroy (gameObject);
+	}
 }

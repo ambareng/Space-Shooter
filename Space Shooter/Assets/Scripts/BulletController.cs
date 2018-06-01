@@ -19,4 +19,8 @@ public class BulletController : MonoBehaviour {
 		if (other.tag == "Border")
 			Destroy (this.gameObject);
 	}
+
+	void OnBecameInvisible () {
+		Destroy (gameObject);
+	}
 }

@@ -7,6 +7,8 @@ TagManager:
   - Bullet
   - Border
   - Enemy
+  - Invincibility Line
+  - No Shoot Line
   layers:
   - Default
   - TransparentFX

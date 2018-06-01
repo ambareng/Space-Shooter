@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class EnemyBulletController : MonoBehaviour {
 	public float bulletSpeed;
@@ -33,6 +34,7 @@ public class EnemyBulletController : MonoBehaviour {
 	void OnTriggerEnter2D (Collider2D other) {
 		if (other.tag == "Player") {
 			Destroy (other.gameObject);
+			SceneManager.LoadScene (SceneManager.GetActiveScene ().buildIndex);
 			Destroy (gameObject);
 		}
 	}
