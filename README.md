@@ -1,1 +1,3 @@
 # Space-Shooter
+
+A 2D mobile shoot em up game which features simple 2D blocks of varying colors. A block follows your finger as you drag your finger across the screen, the block is your ship and it automatically shoots bullets to destroy enemies. You must dodge and or shoot enemies to gain scores. As you gain scores the game gets harder as enemies get faster, spawn faster and takes more bullets before it gets destroyed.
